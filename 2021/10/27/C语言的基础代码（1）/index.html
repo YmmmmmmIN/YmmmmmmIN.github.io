@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>C语言的基础代码（1） | Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C语言的基础代码（1）在c语言中，打印出相同的内容可以写出各种各样的代码。我们可以从简到繁的思路依次看到它多种境界。使用多种循环语句混合及嵌套，结合顺序结构和选择结构，可以编写出效率更高的程序应用。 ​    1.打印3-1000之间的素数 ​       最简单的一种（将这个数x除以小于x且大于1的数，如果不能整除就是素数）：  ​         运行结果：  进一步的：（减少循环次数）  运">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言的基础代码（1）">
+<meta property="og:url" content="http://ymmmmmmin.github.io.git/2021/10/27/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C语言的基础代码（1）在c语言中，打印出相同的内容可以写出各种各样的代码。我们可以从简到繁的思路依次看到它多种境界。使用多种循环语句混合及嵌套，结合顺序结构和选择结构，可以编写出效率更高的程序应用。 ​    1.打印3-1000之间的素数 ​       最简单的一种（将这个数x除以小于x且大于1的数，如果不能整除就是素数）：  ​         运行结果：  进一步的：（减少循环次数）  运">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://ymmmmmmin.github.io.git/2021/10/27/images/%E7%B4%A0%E6%95%B0%E6%99%AE%E9%80%9A%E7%89%88.png">
+<meta property="og:image" content="http://ymmmmmmin.github.io.git/2021/10/27/images/%E6%99%AE%E9%80%9A%E7%89%88%E9%80%9F%E5%BA%A6.png">
+<meta property="og:image" content="http://ymmmmmmin.github.io.git/2021/10/27/images/%E7%B4%A0%E6%95%B0%E9%AB%98%E6%95%88%E7%89%88.png">
+<meta property="og:image" content="http://ymmmmmmin.github.io.git/2021/10/27/images/%E9%AB%98%E6%95%88%E7%89%88%E9%80%9F%E5%BA%A6.png">
+<meta property="article:published_time" content="2021-10-27T14:12:29.000Z">
+<meta property="article:modified_time" content="2021-10-27T15:01:48.126Z">
+<meta property="article:author" content="YmmmmmmIN">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ymmmmmmin.github.io.git/2021/10/27/images/%E7%B4%A0%E6%95%B0%E6%99%AE%E9%80%9A%E7%89%88.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">YmmmmmmIN</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-C语言的基础代码（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/27/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81%EF%BC%881%EF%BC%89/" class="article-date">
+  	<time datetime="2021-10-27T14:12:29.000Z" itemprop="datePublished">2021-10-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C语言的基础代码（1）
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言的基础代码（1）"><a href="#C语言的基础代码（1）" class="headerlink" title="C语言的基础代码（1）"></a>C语言的基础代码（1）</h1><p>在c语言中，打印出相同的内容可以写出各种各样的代码。我们可以从简到繁的思路依次看到它多种境界。使用多种循环语句混合及嵌套，结合顺序结构和选择结构，可以编写出效率更高的程序应用。</p>
+<p>​    1.打印3-1000之间的素数</p>
+<p>​       最简单的一种（将这个数x除以小于x且大于1的数，如果不能整除就是素数）：</p>
+<p><img src="../images/%E7%B4%A0%E6%95%B0%E6%99%AE%E9%80%9A%E7%89%88.png" alt="素数普通版"></p>
+<p>​         运行结果：</p>
+<p><img src="../images/%E6%99%AE%E9%80%9A%E7%89%88%E9%80%9F%E5%BA%A6.png" alt="普通版速度"></p>
+<p>进一步的：（减少循环次数）</p>
+<p><img src="../images/%E7%B4%A0%E6%95%B0%E9%AB%98%E6%95%88%E7%89%88.png" alt="素数高效版"></p>
+<p>运行结果：<img src="../images/%E9%AB%98%E6%95%88%E7%89%88%E9%80%9F%E5%BA%A6.png" alt="高效版速度"></p>
+<p>将简单版和进阶版相对比</p>
+<p>很显然，将两者时间进行比较，进阶版所用时间更少，当循环的次数越多所用时间越多，可见合理利用多种循环语句混合及嵌套，结合顺序结构和选择结构，是更高效的。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/11/14/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019-LoveSQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          [极客大挑战2019]LoveSQL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 YmmmmmmIN
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

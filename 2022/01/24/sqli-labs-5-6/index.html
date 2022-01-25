@@ -9,12 +9,12 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sqli-labs 5-6一开始我以为就跟前面四关一样，是个简单的sql注入。常规做法发现做不出来，然后去看题目名称，Double Injection(双查询注入)，就懂了。">
+  <meta name="description" content="sqli-labs 5-6一开始我以为就跟前面四关一样，是个简单的sql注入。常规做法发现做不出来，然后去看题目名称，Double Injection(双查询注入)，就懂了。 先介绍几个需要用到的语句rand()函数 先来看看这个函数的作用，我们多执行几次 1select rand();   可以看到，这个函数就是随机返回0~1之间的数 floor()函数 先看看单独使用的效果 12select">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqli-labs 5-6">
 <meta property="og:url" content="http://ymmmmmmin.github.io.git/2022/01/24/sqli-labs-5-6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="sqli-labs 5-6一开始我以为就跟前面四关一样，是个简单的sql注入。常规做法发现做不出来，然后去看题目名称，Double Injection(双查询注入)，就懂了。">
+<meta property="og:description" content="sqli-labs 5-6一开始我以为就跟前面四关一样，是个简单的sql注入。常规做法发现做不出来，然后去看题目名称，Double Injection(双查询注入)，就懂了。 先介绍几个需要用到的语句rand()函数 先来看看这个函数的作用，我们多执行几次 1select rand();   可以看到，这个函数就是随机返回0~1之间的数 floor()函数 先看看单独使用的效果 12select">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://ymmmmmmin.github.io.git/2022/01/24/images/rand%E5%87%BD%E6%95%B0.png">
 <meta property="og:image" content="http://ymmmmmmin.github.io.git/2022/01/24/images/floor()(1).png">
@@ -42,7 +42,7 @@
 <meta property="og:image" content="http://ymmmmmmin.github.io.git/2022/01/24/images/sqlless-5(18).png">
 <meta property="og:image" content="http://ymmmmmmin.github.io.git/2022/01/24/images/sqlless-6(1).png">
 <meta property="article:published_time" content="2022-01-24T08:46:30.000Z">
-<meta property="article:modified_time" content="2022-01-24T10:43:23.773Z">
+<meta property="article:modified_time" content="2022-01-25T04:12:37.149Z">
 <meta property="article:author" content="YmmmmmmIN">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="hexo">
@@ -222,8 +222,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="sqli-labs-5-6"><a href="#sqli-labs-5-6" class="headerlink" title="sqli-labs 5-6"></a>sqli-labs 5-6</h1><p>一开始我以为就跟前面四关一样，是个简单的sql注入。常规做法发现做不出来，然后去看题目名称，Double Injection(双查询注入)，就懂了。</p>
-<span id="more"></span>
-
 <h3 id="先介绍几个需要用到的语句"><a href="#先介绍几个需要用到的语句" class="headerlink" title="先介绍几个需要用到的语句"></a>先介绍几个需要用到的语句</h3><p><strong>rand()函数</strong></p>
 <p>先来看看这个函数的作用，我们多执行几次</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> rand();</span><br></pre></td></tr></table></figure>

